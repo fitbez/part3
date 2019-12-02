@@ -1,6 +1,7 @@
 const express = require("express");
-
 const app = express();
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
 
 let persons = [
   {
@@ -55,18 +56,38 @@ app.get("/api/persons/:id", (req, res) => {
   }
 });
 
-app.delete("api/persons/:id", (req, res) => {
+app.delete("/api/persons/:id", (req, res) => {
   const id = Number(req.params.id);
   persons = persons.filter(person => person.id !== id);
 
   res.status(204).end;
 });
 
+// a random number b/n 1 and 100
+const personId = Math.floor(Math.random() * 100) + 4;
+const name = persons.map(person => person.name);
+
 app.post("/api/persons", (req, res) => {
-  // a random number b/n 1 and 100
-  const personId = Math.floor(Math.random() * 100) + 4;
-  const person = req.body;
-  person.id = personId;
+  const body = req.body;
+
+  if (!body.name || !body.number) {
+    return res.status(400).json({
+      error: "content missing"
+    });
+  }
+
+  const person = {
+    name: body.name,
+    number: body.number,
+    id: personId
+  };
+
+  if (name.includes(body.name)) {
+    return res.status(400).json({
+      error: "name must be unique"
+    });
+  }
+  // person.id = personId;
   persons = persons.concat(person);
   res.json(person);
 });
