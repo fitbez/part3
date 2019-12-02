@@ -4,11 +4,13 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 
 app.use(
-  morgan(":method :url :status :res[content-length] - :response-time ms")
+  morgan(
+    ":method :url :status :res[content-length] - :response-time ms :person"
+  )
 );
-// morgan.token("host", (req, res) => {
-//   return req.hostname;
-// });
+morgan.token("person", (req, res) => {
+  return JSON.stringify(req.body);
+});
 
 app.use(bodyParser.json());
 
