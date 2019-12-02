@@ -1,6 +1,15 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const morgan = require("morgan");
+
+app.use(
+  morgan(":method :url :status :res[content-length] - :response-time ms")
+);
+// morgan.token("host", (req, res) => {
+//   return req.hostname;
+// });
+
 app.use(bodyParser.json());
 
 let persons = [
