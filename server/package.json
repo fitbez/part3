@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "phonebook backend",
   "main": "index.js",
+  "engines": {
+    "node": "10.16.3"
+  },
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
