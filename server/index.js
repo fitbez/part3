@@ -74,6 +74,24 @@ app.get("/api/persons/:id", (req, res) => {
   }
 });
 
+// Post request
+app.post("/api/persons", (req, res) => {
+  const body = req.body;
+
+  if (body.name && body.number === undefined) {
+    return res.status(400).json({ error: "content missing" });
+  }
+
+  const person = new Person({
+    name: body.name,
+    number: body.number
+  });
+
+  person.save().then(savedPerson => {
+    res.json(savedPerson.toJSON());
+  });
+});
+
 app.delete("/api/persons/:id", (req, res) => {
   const id = Number(req.params.id);
   persons = persons.filter(person => person.id !== id);
