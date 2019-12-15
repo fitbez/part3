@@ -6,6 +6,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const Person = require("./models/person");
 
+const PORT = process.env.PORT;
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
@@ -102,7 +104,6 @@ app.put("/api/persons/:id", (req, res, next) => {
     .catch(error => next(`this is the`, error));
 });
 
-const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
