@@ -87,7 +87,6 @@ const App = () => {
         }, 5000000);
       })
       .catch(error => {
-        console.log(error.response.data);
         setErrorMessage(error.response.data);
       });
     setPersons(persons.concat(personObject));
