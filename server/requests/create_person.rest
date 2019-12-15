@@ -1,9 +1,5 @@
-post http://localhost:3002/api/persons/
+get http://localhost:3002/api/persons/5df58ec02f6f624becdc6f34
 Content-Type: application/json
 
-{
-    "name": "Arto henoke",
-    "number": "09111502326"
-}
 
 
