@@ -87,7 +87,7 @@ const App = () => {
         }, 5000000);
       })
       .catch(error => {
-        setErrorMessage(error.response.data);
+        setErrorMessage(error.message);
       });
     setPersons(persons.concat(personObject));
     setNewName(" ");
