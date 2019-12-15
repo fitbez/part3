@@ -78,12 +78,17 @@ const App = () => {
       number: newNumber
     };
 
-    personService.create(personObject).then(returnedPerson => {
-      setNotifiy(`${newName}`);
-      setTimeout(() => {
-        setNotifiy(null);
-      }, 5000000);
-    });
+    personService
+      .create(personObject)
+      .then(returnedPerson => {
+        setNotifiy(`${newName}`);
+        setTimeout(() => {
+          setNotifiy(null);
+        }, 5000000);
+      })
+      .catch(error => {
+        setErrorMessage(error.ValidatonError);
+      });
     setPersons(persons.concat(personObject));
     setNewName(" ");
     setNewNumber(" ");
