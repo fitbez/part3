@@ -6,8 +6,9 @@ const morgan = require("morgan");
 const cors = require("cors");
 const Person = require("./models/person");
 
-app.use(cors());
+app.use(express.static("build"));
 app.use(bodyParser.json());
+app.use(cors());
 app.use(
   morgan(
     ":method :url :status :res[content-length] - :response-time ms :person"
