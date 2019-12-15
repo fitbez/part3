@@ -1,4 +1,6 @@
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -6,15 +8,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const Person = require("./models/person");
 
-const PORT = process.env.PORT;
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
+app.use(express.static("client/build"));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(
@@ -101,9 +95,10 @@ app.put("/api/persons/:id", (req, res, next) => {
     .then(updatedPerson => {
       res.json(updatedPerson.toJSON());
     })
-    .catch(error => next(`this is the`, error));
+    .catch(error => next(error));
 });
 
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
