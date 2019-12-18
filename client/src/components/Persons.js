@@ -5,7 +5,7 @@ const Persons = ({ person, handleDelete, persons }) => {
     <li>
       <i className="fas fa-user 3x"></i>
       {person.name}
-      <i class="fas fa-phone 2x"></i>
+      <i className="fas fa-phone 2x"></i>
       {person.number}
       <i
         onClick={() => {
