@@ -84,7 +84,7 @@ const App = () => {
         setNotifiy(`${newName}`);
         setTimeout(() => {
           setNotifiy(null);
-        }, 5000000);
+        }, 5000000000);
       })
       .catch(error => {
         setErrorMessage(error.message);
@@ -122,7 +122,7 @@ const App = () => {
             );
             setTimeout(() => {
               setErrorMessage(null);
-            }, 500000);
+            }, 5000000000);
           });
       }
     });
@@ -142,23 +142,27 @@ const App = () => {
 
   return (
     <div>
-      <h2>Phonebook</h2>
-      <Notification message={notifiy} />
-      <Error message={errorMessage} />
-      <Filter value={filterName} onChange={handleFilterName} />
-      <div>
-        <h2>add a new</h2>
-      </div>
-      <PersonForm
-        valueName={newName}
-        valueNumber={newNumber}
-        onChangeName={handleNameChange}
-        addPerson={handleCreateAndUpdate}
-        onChangeNumber={handleNumberChange}
-      />
-      <h2>Numbers</h2>
-      <div>
-        <ul>{phoneBook()}</ul>
+      <div className="container">
+        <div className="add-contact">
+          <h2>Phonebook</h2>
+          <Notification message={notifiy} />
+          <Error message={errorMessage} />
+          <Filter value={filterName} onChange={handleFilterName} />
+          <div>
+            <h3> New Contact</h3>
+          </div>
+          <PersonForm
+            valueName={newName}
+            valueNumber={newNumber}
+            onChangeName={handleNameChange}
+            addPerson={handleCreateAndUpdate}
+            onChangeNumber={handleNumberChange}
+          />
+        </div>
+        <div className="contact-list">
+          <h3>Contacts</h3>
+          <ul>{phoneBook()}</ul>
+        </div>
       </div>
     </div>
   );

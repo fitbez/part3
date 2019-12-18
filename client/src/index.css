@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #cfd8dc;
 }
 
 code {
@@ -12,29 +13,58 @@ code {
     monospace;
 }
 
-h2 {
-  color: rgb(7, 73, 7);
-  font-style: italic;
+h2,
+h3 {
+  color: #009688;
 }
-
 ul {
   list-style: none;
 }
-
 li {
-  color: grey;
+  color: #333;
   font-size: 15px;
+  width: 350px;
+  height: 40px;
+  border: 1px solid #f4f4f4;
+  border-radius: 3px;
+  box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.1),
+    0 0.5px 0.5px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-top: 15px;
 }
-
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 button {
   margin: 5px;
   width: 60px;
   height: 30px;
   color: red;
 }
-
-.addButton {
-  color: green;
+.btn {
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background-color: #37474f;
+  font-size: 1rem;
+}
+.btn-btn {
+  text-align: center;
+}
+.btn-btn p {
+  font-size: 1rem;
+}
+.btn:hover {
+  background-color: #009688;
+  color: #fff;
+  transition: 0.7s ease-out;
 }
 .notify {
   color: black;
@@ -44,7 +74,7 @@ button {
   border-style: solid;
   padding: 10px;
   margin-bottom: 10px;
-  border-color: green;
+  border-color: #009688;
 }
 
 .error {
@@ -56,4 +86,47 @@ button {
   padding: 10px;
   margin-bottom: 10px;
   border-color: red;
+}
+.add-contact {
+  text-align: center;
+}
+.contact-list h3 {
+  text-align: center;
+}
+.input-name,
+.input-search,
+.input-number {
+  width: 180px;
+  height: 30px;
+  border: 1px solid #9e9e9e;
+  font-size: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding-left: 7px;
+  outline: none;
+}
+.input-name {
+  margin-right: 10px;
+}
+.input-name:focus,
+.input-search:focus,
+.input-number:focus {
+  background-color: rgba(0, 0, 0, 0.01);
+  border-color: #009688;
+}
+.fa-user {
+  color: #37474f;
+  margin-right: 10px;
+}
+.fa-trash-alt {
+  color: red;
+  text-align: end;
+  cursor: pointer;
+  position: relative;
+  left: 50px;
+}
+.fa-phone {
+  color: #37474f;
+  margin-right: 10px;
+  margin-left: 10px;
 }

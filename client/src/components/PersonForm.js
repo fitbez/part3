@@ -13,15 +13,23 @@ const PersonForm = ({
     <div>
       <form>
         <div>
-          name: <input value={valueName} onChange={onChangeName} />
-        </div>
+          <input
+            className="input-name"
+            placeholder="Jhon Doe"
+            value={valueName}
+            onChange={onChangeName}
+          />
 
-        <div>
-          number: <input value={valueNumber} onChange={onChangeNumber} />
+          <input
+            className="input-number"
+            placeholder="xxx-xxx-xxxx"
+            value={valueNumber}
+            onChange={onChangeNumber}
+          />
         </div>
-        <div>
-          <button className="addButton" type="submit" onClick={addPerson}>
-            add
+        <div className="btn-btn">
+          <button className="btn" type="submit" onClick={addPerson}>
+            add new contact
           </button>
         </div>
       </form>

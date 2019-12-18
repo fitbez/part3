@@ -3,17 +3,20 @@ import React from "react";
 const Persons = ({ person, handleDelete, persons }) => {
   return (
     <li>
-      {person.name} {""}
+      <i className="fas fa-user 3x"></i>
+      {person.name}
+      <i class="fas fa-phone 2x"></i>
       {person.number}
-      <button
+      <i
         onClick={() => {
           return window.confirm(`Delete ${person.name}?`)
             ? handleDelete(person.id)
             : null;
         }}
+        className="far fa-trash-alt 3x"
       >
-        delete
-      </button>
+        {" "}
+      </i>
     </li>
   );
 };
