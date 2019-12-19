@@ -19,19 +19,19 @@ h3 {
 }
 ul {
   list-style: none;
+  padding: 0;
 }
 li {
   color: #333;
   font-size: 15px;
   width: 350px;
-  height: 40px;
+  height: 60px;
   border: 1px solid #f4f4f4;
   border-radius: 3px;
   box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.1),
     0 0.5px 0.5px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   padding-left: 15px;
-  padding-top: 15px;
 }
 .container {
   display: flex;
@@ -119,15 +119,19 @@ button {
   color: #37474f;
   margin-right: 10px;
 }
+.phone {
+  margin-top: 10px;
+}
 .fa-trash-alt {
-  color: red;
-  text-align: end;
   cursor: pointer;
   position: relative;
-  left: 50px;
+  left: 330px;
+  bottom: 35px;
 }
-.fa-phone {
+.fa-trash-alt:hover {
+  color: #f44336;
+}
+.fa-mobile {
   color: #37474f;
   margin-right: 10px;
-  margin-left: 10px;
 }
