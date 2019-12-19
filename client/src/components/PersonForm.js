@@ -15,14 +15,14 @@ const PersonForm = ({
         <div>
           <input
             className="input-name"
-            placeholder="Jhon Doe"
+            placeholder="Name"
             value={valueName}
             onChange={onChangeName}
           />
 
           <input
             className="input-number"
-            placeholder="xxx-xxx-xxxx"
+            placeholder="Number"
             value={valueNumber}
             onChange={onChangeNumber}
           />
