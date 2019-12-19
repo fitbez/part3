@@ -107,7 +107,10 @@ button {
   outline: none;
 }
 .input-name {
-  margin-right: 10px;
+  margin-right: 5px;
+}
+.input-number {
+  margin-left: 5px;
 }
 .input-name:focus,
 .input-search:focus,
@@ -118,6 +121,7 @@ button {
 .fa-user {
   color: #37474f;
   margin-right: 10px;
+  margin-top: 8px;
 }
 .phone {
   margin-top: 10px;
@@ -125,7 +129,7 @@ button {
 .fa-trash-alt {
   cursor: pointer;
   position: relative;
-  left: 330px;
+  left: 320px;
   bottom: 35px;
 }
 .fa-trash-alt:hover {
