@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: hsl(198, 16%, 84%); */
+  font-family: "Courier Prime", monospace;
 }
 
 code {
