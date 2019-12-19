@@ -15,21 +15,21 @@ const PersonForm = ({
         <div>
           <input
             className="input-name"
-            placeholder="Name"
+            placeholder="name"
             value={valueName}
             onChange={onChangeName}
           />
 
           <input
             className="input-number"
-            placeholder="Number"
+            placeholder="phone number"
             value={valueNumber}
             onChange={onChangeNumber}
           />
         </div>
         <div className="btn-btn">
           <button className="btn" type="submit" onClick={addPerson}>
-            add new contact
+            <p>add new contact</p>
           </button>
         </div>
       </form>

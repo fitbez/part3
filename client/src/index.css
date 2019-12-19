@@ -1,19 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: hsl(198, 16%, 84%); */
   font-family: "Courier Prime", monospace;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 h2,
 h3 {
   color: #009688;
@@ -48,7 +39,7 @@ button {
 }
 .btn {
   color: #fff;
-  width: 150px;
+  width: 170px;
   height: 40px;
   border-radius: 5px;
   text-align: center;
@@ -60,13 +51,17 @@ button {
 .btn-btn {
   text-align: center;
 }
-.btn-btn p {
+.btn p {
   font-size: 1rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: "Courier Prime", monospace;
 }
 .btn:hover {
   background-color: #009688;
-  color: #fff;
-  transition: 0.7s ease-out;
+  color: #333;
+  transition: 0.5s ease-out;
 }
 .notify {
   color: black;
@@ -110,8 +105,14 @@ button {
 .input-name {
   margin-right: 5px;
 }
+.input-name::-webkit-input-placeholder {
+  font-family: "Courier Prime", monospace;
+}
 .input-number {
   margin-left: 5px;
+}
+.input-number::-webkit-input-placeholder {
+  font-family: "Courier Prime", monospace;
 }
 .input-name:focus,
 .input-search:focus,
