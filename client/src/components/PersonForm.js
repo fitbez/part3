@@ -12,20 +12,23 @@ const PersonForm = ({
   return (
     <div>
       <form>
-        <div>
-          <input
-            className="input-name"
-            placeholder="name"
-            value={valueName}
-            onChange={onChangeName}
-          />
-
-          <input
-            className="input-number"
-            placeholder="phone number"
-            value={valueNumber}
-            onChange={onChangeNumber}
-          />
+        <div className="input-form">
+          <div className="name">
+            <input
+              className="input-name"
+              placeholder="name"
+              value={valueName}
+              onChange={onChangeName}
+            />
+          </div>
+          <div className="number">
+            <input
+              className="input-number"
+              placeholder="phone number"
+              value={valueNumber}
+              onChange={onChangeNumber}
+            />
+          </div>
         </div>
         <div className="btn-btn">
           <button className="btn" type="submit" onClick={addPerson}>

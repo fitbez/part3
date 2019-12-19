@@ -146,7 +146,7 @@ const App = () => {
         <div className="add-contact">
           <div className="phonebook">
             <div>
-              <i class="far fa-address-book"></i>
+              <i className="far fa-address-book"></i>
             </div>
             <div>
               <h2>Phonebook</h2>
