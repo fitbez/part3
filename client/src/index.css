@@ -31,11 +31,15 @@ li {
   justify-content: center;
   align-items: center;
 }
-button {
-  margin: 5px;
-  width: 60px;
-  height: 30px;
-  color: red;
+.phonebook {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.phonebook i {
+  font-size: 2rem;
+  margin-right: 20px;
 }
 .btn {
   color: #fff;
@@ -89,6 +93,9 @@ button {
 }
 .contact-list h3 {
   text-align: center;
+}
+input {
+  font-family: "Courier Prime", monospace;
 }
 .input-name,
 .input-search,

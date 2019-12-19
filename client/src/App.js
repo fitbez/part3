@@ -144,7 +144,14 @@ const App = () => {
     <div>
       <div className="container">
         <div className="add-contact">
-          <h2>Phonebook</h2>
+          <div className="phonebook">
+            <div>
+              <i class="far fa-address-book"></i>
+            </div>
+            <div>
+              <h2>Phonebook</h2>
+            </div>
+          </div>
           <Notification message={notifiy} />
           <Error message={errorMessage} />
           <Filter value={filterName} onChange={handleFilterName} />
