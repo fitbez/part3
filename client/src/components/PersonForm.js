@@ -24,7 +24,7 @@ const PersonForm = ({
           <div className="number">
             <input
               className="input-number"
-              placeholder="phone number"
+              placeholder="phone"
               value={valueNumber}
               onChange={onChangeNumber}
             />

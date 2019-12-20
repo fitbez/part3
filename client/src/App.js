@@ -60,6 +60,24 @@ const App = () => {
     person => person.name.toUpperCase().indexOf(filteredName) > -1
   );
 
+  /* Sort an array of contact list alphabetically */
+  const dynamicSort = name => {
+    const sortOrder = 1;
+    if (name[0] === "-") {
+      sortOrder = -1;
+      name = name.substr(1);
+    }
+    return (a, b) => {
+      if (sortOrder == -1) {
+        return b[name].localeCompare(a[name]);
+      } else {
+        return a[name].localeCompare(b[name]);
+      }
+    };
+  };
+  namesToShow.sort(dynamicSort("name"));
+
+  /* renders contact lists by maping out array of persons object */
   const phoneBook = () =>
     namesToShow.map(person => {
       return (
