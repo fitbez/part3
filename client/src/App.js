@@ -196,6 +196,7 @@ const App = () => {
           />
         </div>
         <div className="contact-list">
+          <h3>Contacts</h3>
           <div id="nav" className="char-container">
             {chars.map(char => {
               return <div>{char}</div>;
@@ -203,7 +204,6 @@ const App = () => {
           </div>
           <div>
             {" "}
-            <h3>Contacts</h3>
             <ul>{phoneBook()}</ul>
           </div>
         </div>
