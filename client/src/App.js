@@ -37,6 +37,7 @@ const App = () => {
     setFilterName(e.target.value);
   };
 
+  /*Deleting a person by its ID */
   const handleDelete = id => {
     axios
       .delete(`https://shielded-bastion-62666.herokuapp.com/api/persons/${id}`)
@@ -68,7 +69,7 @@ const App = () => {
       name = name.substr(1);
     }
     return (a, b) => {
-      if (sortOrder == -1) {
+      if (sortOrder === -1) {
         return b[name].localeCompare(a[name]);
       } else {
         return a[name].localeCompare(b[name]);
@@ -90,6 +91,15 @@ const App = () => {
       );
     });
 
+  /*Building letter array from A to Z*/
+  let createArrayAtoZ = () => {
+    return Array.apply(null, { length: 26 }).map((x, i) =>
+      String.fromCharCode(65 + i)
+    );
+  };
+  let chars = createArrayAtoZ();
+
+  /*Creating a person object */
   const addPerson = () => {
     const personObject = {
       name: newName,
@@ -112,6 +122,7 @@ const App = () => {
     setNewNumber(" ");
   };
 
+  /*Updating a person object */
   const updateNumber = id => {
     persons.some(e => {
       if (e.name.toUpperCase() === newName.toUpperCase()) {
@@ -185,8 +196,16 @@ const App = () => {
           />
         </div>
         <div className="contact-list">
-          <h3>Contacts</h3>
-          <ul>{phoneBook()}</ul>
+          <div id="nav" className="char-container">
+            {chars.map(char => {
+              return <div>{char}</div>;
+            })}
+          </div>
+          <div>
+            {" "}
+            <h3>Contacts</h3>
+            <ul>{phoneBook()}</ul>
+          </div>
         </div>
       </div>
     </div>

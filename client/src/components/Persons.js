@@ -1,6 +1,6 @@
 import React from "react";
 
-const Persons = ({ person, handleDelete, persons }) => {
+const Persons = ({ person, handleDelete }) => {
   return (
     <li>
       <i className="fas fa-user 3x"></i>
