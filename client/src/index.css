@@ -170,6 +170,8 @@ input:focus::placeholder {
   align-items: center;
   flex-flow: wrap;
   padding: 3px;
+  position: sticky;
+  top: 0;
 }
 .char-container div:hover {
   color: #333;
