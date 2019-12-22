@@ -5,9 +5,7 @@ const PersonForm = ({
   valueNumber,
   onChangeName,
   addPerson,
-  onChangeNumber,
-  persons,
-  newName
+  onChangeNumber
 }) => {
   return (
     <div>

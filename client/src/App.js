@@ -63,7 +63,7 @@ const App = () => {
 
   /* Sort an array of contact list alphabetically */
   const dynamicSort = name => {
-    const sortOrder = 1;
+    let sortOrder = 1;
     if (name[0] === "-") {
       sortOrder = -1;
       name = name.substr(1);
@@ -98,6 +98,18 @@ const App = () => {
     );
   };
   let chars = createArrayAtoZ();
+
+  /* Scrolls to a matched letter */
+  const handleJump = (i, e) => {
+    const names = namesToShow.map(person => {
+      return person.name;
+    });
+    names.forEach(name => {
+      if (i === name[0].toUpperCase()) {
+        window.location.href = `#${name[0]}`;
+      }
+    });
+  };
 
   /*Creating a person object */
   const addPerson = () => {
@@ -198,8 +210,12 @@ const App = () => {
         <div className="contact-list">
           <h3>Contacts</h3>
           <div id="nav" className="char-container">
-            {chars.map(char => {
-              return <div>{char}</div>;
+            {chars.map((char, index) => {
+              return (
+                <div key={index} onClick={handleJump.bind(this, char)}>
+                  {char}
+                </div>
+              );
             })}
           </div>
           <div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Persons = ({ person, handleDelete }) => {
   return (
-    <li>
+    <li id={person.name[0]}>
       <i className="fas fa-user 3x"></i>
       {person.name}
       <div className="phone">
