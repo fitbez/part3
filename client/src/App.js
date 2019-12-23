@@ -40,7 +40,7 @@ const App = () => {
   /*Deleting a person by its ID */
   const handleDelete = id => {
     axios
-      .delete(`https://shielded-bastion-62666.herokuapp.com/api/persons/${id}`)
+      .delete(`https://phonebook-2019.herokuapp.com/api/persons/${id}`)
       .then(() => {
         setPersons(namesToShow.filter(person => person.id !== id));
       })
@@ -145,7 +145,7 @@ const App = () => {
 
         axios
           .put(
-            `https://shielded-bastion-62666.herokuapp.com/api/persons/${id}`,
+            `https://phonebook-2019.herokuapp.com/api/persons/${id}`,
             changedNumber
           )
           .then(returnedPerson => {
