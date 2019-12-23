@@ -208,7 +208,10 @@ const App = () => {
           />
         </div>
         <div className="contact-list">
-          <h3>Contacts</h3>
+          <div className="contact-head">
+            <h3>Contacts</h3>
+            <p>{`${namesToShow.length} contacts`}</p>
+          </div>
           <div id="nav" className="char-container">
             {chars.map((char, index) => {
               return (

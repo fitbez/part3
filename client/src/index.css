@@ -101,8 +101,15 @@ li {
   flex-direction: column;
   justify-content: space-between;
 }
+.contact-head {
+  display: flex;
+  flex-direction: column;
+}
 .contact-list h3 {
   text-align: center;
+}
+.contact-list p {
+  font-size: x-small;
 }
 input {
   font-family: "Courier Prime", monospace;
