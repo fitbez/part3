@@ -111,6 +111,19 @@ const App = () => {
     });
   };
 
+  /* Makes nav active if it has a much from contact list */
+  // console.log(chars);
+
+  let getFirstLetterOfNames = namesToShow.map(person => {
+    return person.name[0].toUpperCase();
+  });
+
+  const activeLetters = chars.filter(
+    val => -1 !== getFirstLetterOfNames.indexOf(val)
+  );
+
+  const cName = document.querySelectorAll(".contactElement.inactive");
+
   /*Creating a person object */
   const addPerson = () => {
     const personObject = {
@@ -215,7 +228,13 @@ const App = () => {
           <div id="nav" className="char-container">
             {chars.map((char, index) => {
               return (
-                <div key={index} onClick={handleJump.bind(this, char)}>
+                <div
+                  className="contactElement inactive"
+                  data-filter={`${char}`}
+                  key={index}
+                  onLoad={() => {}}
+                  onClick={handleJump.bind(this, char)}
+                >
                   {char}
                 </div>
               );

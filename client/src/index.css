@@ -110,6 +110,7 @@ li {
 }
 .contact-list p {
   font-size: x-small;
+  margin-left: 20px;
 }
 input {
   font-family: "Courier Prime", monospace;
@@ -168,8 +169,7 @@ input:focus::placeholder {
   font-size: 1em;
   line-height: 1.5em;
   background-color: #abcdef;
-  color: #fff;
-  cursor: pointer;
+  color: #333;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -181,8 +181,12 @@ input:focus::placeholder {
   top: 0;
   z-index: 1;
 }
-.char-container div:hover {
+.char-container .inactive:hover {
   color: #333;
   font-size: 2em;
   padding-top: 5px;
+}
+.inactive {
+  color: #f4f4f4;
+  cursor: default;
 }
