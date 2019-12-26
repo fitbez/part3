@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -189,4 +192,8 @@ input:focus::placeholder {
 .inactive {
   color: #f4f4f4;
   cursor: default;
+}
+
+.active {
+  color: green;
 }

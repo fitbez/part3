@@ -122,8 +122,12 @@ const App = () => {
     val => -1 !== getFirstLetterOfNames.indexOf(val)
   );
 
-  const cName = document.querySelectorAll(".contactElement.inactive");
-
+  // let handle = () => {
+  //   if () {
+  //     const elem = document.querySelector(".inactive");
+  //     elem.classList.remove(".inactive");
+  //   }
+  // };
   /*Creating a person object */
   const addPerson = () => {
     const personObject = {
@@ -229,11 +233,11 @@ const App = () => {
             {chars.map((char, index) => {
               return (
                 <div
-                  className="contactElement inactive"
-                  data-filter={`${char}`}
                   key={index}
-                  onLoad={() => {}}
                   onClick={handleJump.bind(this, char)}
+                  className={`contactElement inactive ${
+                    activeLetters.includes(char) ? "active" : ""
+                  }`}
                 >
                   {char}
                 </div>
