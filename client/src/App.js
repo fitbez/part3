@@ -112,7 +112,6 @@ const App = () => {
   };
 
   /* Makes nav active if it has a much from contact list */
-  // console.log(chars);
 
   let getFirstLetterOfNames = namesToShow.map(person => {
     return person.name[0].toUpperCase();
@@ -122,13 +121,6 @@ const App = () => {
     val => -1 !== getFirstLetterOfNames.indexOf(val)
   );
 
-  // let handle = () => {
-  //   if () {
-  //     const elem = document.querySelector(".inactive");
-  //     elem.classList.remove(".inactive");
-  //   }
-  // };
-  /*Creating a person object */
   const addPerson = () => {
     const personObject = {
       name: newName,
@@ -141,7 +133,7 @@ const App = () => {
         setNotifiy(`${newName}`);
         setTimeout(() => {
           setNotifiy(null);
-        }, 5000000000);
+        }, 5000);
       })
       .catch(error => {
         setErrorMessage(error.message);
