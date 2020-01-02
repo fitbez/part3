@@ -157,7 +157,7 @@ input:focus::placeholder {
 .fa-trash-alt {
   cursor: pointer;
   position: relative;
-  left: 320px;
+  left: 310px;
   bottom: 35px;
 }
 .fa-trash-alt:hover {
@@ -193,7 +193,11 @@ input:focus::placeholder {
   color: #f4f4f4;
   cursor: default;
 }
-
 .active {
   color: green;
+}
+.slide {
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+  transform: translateY(0);
 }

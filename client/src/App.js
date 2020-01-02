@@ -16,6 +16,7 @@ const App = () => {
   const [filterName, setFilterName] = useState("");
   const [notifiy, setNotifiy] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [slide, setSlide] = useState(false);
 
   useEffect(() => {
     personService.getAll().then(initialPerson => {
@@ -42,6 +43,7 @@ const App = () => {
     axios
       .delete(`https://phonebook-2019.herokuapp.com/api/persons/${id}`)
       .then(() => {
+        setSlide(true);
         setPersons(namesToShow.filter(person => person.id !== id));
       })
       .catch(error => {
@@ -87,6 +89,7 @@ const App = () => {
           person={person}
           handleDelete={handleDelete}
           persons={persons}
+          slide={slide}
         />
       );
     });
@@ -112,7 +115,6 @@ const App = () => {
   };
 
   /* Makes nav active if it has a much from contact list */
-
   let getFirstLetterOfNames = namesToShow.map(person => {
     return person.name[0].toUpperCase();
   });
@@ -130,7 +132,7 @@ const App = () => {
     personService
       .create(personObject)
       .then(returnedPerson => {
-        setNotifiy(`${newName}`);
+        setNotifiy(`${newName} is successfuly added to contact`);
         setTimeout(() => {
           setNotifiy(null);
         }, 5000);
@@ -236,9 +238,9 @@ const App = () => {
               );
             })}
           </div>
-          <div>
+          <div className="contacts">
             {" "}
-            <ul>{phoneBook()}</ul>
+            <ul className={`${slide ? "active" : ""}`}>{phoneBook()}</ul>
           </div>
         </div>
       </div>

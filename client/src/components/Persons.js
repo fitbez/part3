@@ -1,6 +1,6 @@
 import React from "react";
 
-const Persons = ({ person, handleDelete }) => {
+const Persons = ({ person, handleDelete, slide }) => {
   return (
     <li id={person.name[0]}>
       <i className="fas fa-user 3x"></i>
@@ -13,6 +13,7 @@ const Persons = ({ person, handleDelete }) => {
 
       <div className="delete">
         <i
+          key={person.id}
           onClick={() => {
             return window.confirm(`Delete ${person.name}?`)
               ? handleDelete(person.id)
