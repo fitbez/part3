@@ -187,11 +187,11 @@ input:focus::placeholder {
 .char-container .inactive:hover {
   color: #333;
   font-size: 2em;
-  padding-top: 5px;
 }
 .inactive {
   color: #f4f4f4;
   cursor: default;
+  position: relative;
 }
 .active {
   color: green;
